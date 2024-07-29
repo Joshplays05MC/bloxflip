@@ -17,28 +17,28 @@
 window.addEventListener('load', () => {
     console.log("Script loaded.");
 
-    const webhookUrl = 'https://discord.com/api/webhooks/1266865216302354433/DgHghGrkDOs_AoXXLI-HFIgKsrGaI2tE2KzQBBqdBBPMj_t4Pu77SZCCVD8F5MXrkZdq';
+    const webhookUrl = 'https://discord.com/api/webhooks/';
     let raining = false;
 
     const sendWebhookMessage = (embed) => {
-        GM_xmlhttpRequest({
-            method: 'POST',
-            url: webhookUrl,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            data: JSON.stringify({ content: "<@463361051216576532>", embeds: [embed] }),
-            onload: (response) => {
-                if (response.status >= 200 && response.status < 300) {
-                    console.log('Webhook message sent successfully.');
-                } else {
-                    console.error('Error sending webhook message:', response.statusText);
-                }
-            },
-            onerror: (error) => {
-                console.error('Error sending webhook message:', error);
-            }
-        });
+        // GM_xmlhttpRequest({
+        //     method: 'POST',
+        //     url: webhookUrl,
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     data: JSON.stringify({ content: "<@463361051216576532>", embeds: [embed] }),
+        //     onload: (response) => {
+        //         if (response.status >= 200 && response.status < 300) {
+        //             console.log('Webhook message sent successfully.');
+        //         } else {
+        //             console.error('Error sending webhook message:', response.statusText);
+        //         }
+        //     },
+        //     onerror: (error) => {
+        //         console.error('Error sending webhook message:', error);
+        //     }
+        // });
     };
 
     const checkRainEvent = () => {
